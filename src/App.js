@@ -5,17 +5,14 @@ import React from "react" ;
 const deso = new Deso();
 
 function App() { 
-
-  const getInputValue = (event,userValue)=>{
-    // show the user input value to console
-    userValue = event.target.value;
-    const Hello = userValue;
-    console.log(userValue);
-    return {Hello};
-  };
   const [sampleResponse, setSampleResponse] = useState();
   const [loginResponse, setLoginResponse] = useState();
   const [postResponse, setPostResponse] = useState();
+
+  // Forms Input
+  
+  const [body, setBody] = useState('');
+
   return (
     <div>
       <button
@@ -49,8 +46,9 @@ function App() {
 
      <form >
         <label>
-          Name:
-          <input type="text" onChange={getInputValue} />
+          Description:
+          <input type="text" value={body}  onChange={(e)=> setBody(e.target.value) } />
+          {/* <p> {body} </p> */}
         </label>
       </form>
       <button
@@ -58,12 +56,11 @@ function App() {
           const postResponse = await deso.posts.submitPost({
             UpdaterPublicKeyBase58Check: deso.identity.getUserKey(),
             BodyObj: {
-              Body: this.getInputValue.Hello,
+              Body:body,
               VideoURLs: [],
               ImageURLs: [],
             },
           });
-          console.log(this.getInputValue());
           setPostResponse(JSON.stringify(postResponse, null, 2));
         }}
       >
