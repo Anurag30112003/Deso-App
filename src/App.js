@@ -1,7 +1,9 @@
+import Makepost from "./components/makePost";
 import "./App.css";
 import Deso from "deso-protocol";
 import { useState } from "react";
 import React from "react" ;
+import Navbar from "./components/navbar";
 const deso = new Deso();
 
 function App() { 
@@ -11,61 +13,15 @@ function App() {
 
   // Forms Input
   
-  const [body, setBody] = useState('');
+  // const [body, setBody] = useState('');
 
   return (
     <div>
-      <button
-        onClick={async () => {
-          const user = await deso.identity.login();
-          console.log(user);
-          setLoginResponse(JSON.stringify(user, null, 2));
-        }}
-      >
-        login
-      </button>
-      <button
-        onClick={() => {
-          deso.identity.logout(deso.identity.getUserKey());
-        }}
-      >
-        logout
-      </button>
-      <button
-        onClick={async () => {
-          const user = await deso.user.getSingleProfile({
-            PublicKeyBase58Check: deso.identity.getUserKey(),
-          });
-          console.log(user);
-          setSampleResponse(JSON.stringify(user, null, 2));
-        }}
-      >
-        get user
-      </button>
+  
+     
+     <Navbar/>
+      <Makepost/>
 
-
-     <form >
-        <label>
-          Description:
-          <input type="text" value={body}  onChange={(e)=> setBody(e.target.value) } />
-          {/* <p> {body} </p> */}
-        </label>
-      </form>
-      <button
-        onClick={async () => {
-          const postResponse = await deso.posts.submitPost({
-            UpdaterPublicKeyBase58Check: deso.identity.getUserKey(),
-            BodyObj: {
-              Body:body,
-              VideoURLs: [],
-              ImageURLs: [],
-            },
-          });
-          setPostResponse(JSON.stringify(postResponse, null, 2));
-        }}
-      >
-        submit post
-      </button>
       <div>
         Login info
         <pre>{loginResponse}</pre>
@@ -75,10 +31,7 @@ function App() {
         <pre>{sampleResponse}</pre>
       </div>
       setPostResponse
-      <div>
-        User info
-        <pre>{postResponse}</pre>
-      </div>
+
     </div>
   );
 }
