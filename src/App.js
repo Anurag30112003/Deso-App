@@ -1,5 +1,4 @@
 import Makepost from "./components/makePost";
-import "./App.css";
 import Deso from "deso-protocol";
 import { useState } from "react";
 import React from "react" ;
@@ -10,15 +9,10 @@ function App() {
   const [sampleResponse, setSampleResponse] = useState();
   const [loginResponse, setLoginResponse] = useState();
   const [postResponse, setPostResponse] = useState();
-
-  // Forms Input
   
-  // const [body, setBody] = useState('');
-
   return (
     <div>
   
-     
      <Navbar/>
       <Makepost/>
 

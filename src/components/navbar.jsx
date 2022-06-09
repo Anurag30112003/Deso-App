@@ -1,4 +1,4 @@
-// import "./App.css";
+
 import Deso from "deso-protocol";
 import { useState } from "react";
 import React from "react";
@@ -7,11 +7,11 @@ function Navbar() {
 
   const [sampleResponse, setSampleResponse] = useState();
   const [loginResponse, setLoginResponse] = useState();
-  const [postResponse, setPostResponse] = useState();
 
   return (    
-  <div>
+  <div className="bg-blue-500 text-center">
     <button
+    className=" mx-4  hover:bg-blue-700 text-white font-bold py-5 px-8 "
         onClick={async () => {
           const user = await deso.identity.login();
           console.log(user);
@@ -21,6 +21,8 @@ function Navbar() {
         login
       </button>
       <button
+          className=" mx-4 hover:bg-blue-700 text-white font-bold py-5  px-8 "
+
         onClick={() => {
           deso.identity.logout(deso.identity.getUserKey());
         }}
@@ -28,6 +30,8 @@ function Navbar() {
         logout
       </button>
       <button
+          className=" mx-4 hover:bg-blue-700 text-white font-bold py-5  px-8 "
+
         onClick={async () => {
           const user = await deso.user.getSingleProfile({
             PublicKeyBase58Check: deso.identity.getUserKey(),

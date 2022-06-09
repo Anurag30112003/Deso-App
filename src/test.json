@@ -1,0 +1,39 @@
+{
+  "TstampNanos": 1654801049633330400,
+  "PostHashHex": "dc96568a6978077ff82b78789318986686bda00c93667e18aa789c3b7b4d7dfb",
+  "TotalInputNanos": 17271,
+  "ChangeAmountNanos": 16930,
+  "FeeNanos": 341,
+  "Transaction": {
+    "TxInputs": [
+      {
+        "TxID": [
+          126, 148, 196, 64, 130, 55, 252, 100, 100, 245, 13, 1, 185, 68, 29,
+          95, 7, 21, 232, 114, 152, 13, 239, 13, 199, 61, 176, 168, 35, 150,
+          211, 91
+        ],
+        "Index": 0
+      }
+    ],
+    "TxOutputs": [
+      {
+        "PublicKey": "A6+zxirIi7YCbn10GIaoiqltbKJeB5P7C05W2bDmS2sD",
+        "AmountNanos": 16930
+      }
+    ],
+    "TxnMeta": {
+      "PostHashToModify": null,
+      "ParentStakeID": null,
+      "Body": "eyJCb2R5IjoiQVBJIHRlc3RpbmcifQ==",
+      "CreatorBasisPoints": 1000,
+      "StakeMultipleBasisPoints": 12500,
+      "TimestampNanos": 1654801049633330400,
+      "IsHidden": false
+    },
+    "PublicKey": "A6+zxirIi7YCbn10GIaoiqltbKJeB5P7C05W2bDmS2sD",
+    "ExtraData": null,
+    "Signature": null,
+    "TxnTypeJSON": 5
+  },
+  "TransactionHex": "017e94c4408237fc6464f50d01b9441d5f0715e872980def0dc73db0a82396d35b000103afb3c62ac88bb6026e7d741886a88aa96d6ca25e0793fb0b4e56d9b0e64b6b03a2840105270000167b22426f6479223a224150492074657374696e67227de807d461b0aada8a9899c2fb16002103afb3c62ac88bb6026e7d741886a88aa96d6ca25e0793fb0b4e56d9b0e64b6b030000"
+}

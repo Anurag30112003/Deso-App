@@ -11,18 +11,21 @@ function Makepost() {
 
   return (
     <div>
-      <form>
+      <form className="text-center">
         <label>
           Description:
-          <input
+          <input className="my-5 mx-3 border-solid border-2 border-gray-600"
             type="text"
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
-          {/* <p> {body} </p> */}
+           {/* <p> {body} </p>  */}
         </label>
+        <br />
       </form>
+      <div className="text-center">
       <button
+      className="my-5 mx-3  bg-blue-500 hover:bg-blue-700 text-white font-bold py-5 px-8  "
         onClick={async () => {
           const postResponse = await deso.posts.submitPost({
             UpdaterPublicKeyBase58Check: deso.identity.getUserKey(),
@@ -32,13 +35,13 @@ function Makepost() {
               ImageURLs: [],
             },
           });
-          setPostResponse(JSON.stringify(postResponse, null, 2));
+          setPostResponse(JSON.stringify(postResponse, null, 3));
         }}
       >
         submit post
-      </button>
+      </button></div>
       <div>
-        User info
+        Post info
         <pre>{postResponse}</pre>
       </div>
       {/* <h1 className="text-3xl text-red-500 font-bold underline">
