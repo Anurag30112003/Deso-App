@@ -35,13 +35,13 @@ function Makepost() {
               ImageURLs: [],
             },
           });
-          setPostResponse(JSON.stringify(postResponse, null, 3));
+          setPostResponse(JSON.stringify(postResponse, null, 2));
         }}
       >
         submit post
       </button></div>
       <div>
-        Post info
+        User info
         <pre>{postResponse}</pre>
       </div>
       {/* <h1 className="text-3xl text-red-500 font-bold underline">
